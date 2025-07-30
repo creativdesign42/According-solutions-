@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outsourced Accounting Manager Boise | Bookkeeping, Tax & Advisory for Small Businesses</title>
+    <meta name="description" content="Affordable, tech-enabled bookkeeping, tax prep, and advisory services for hair stylists, tattoo artists, daycare providers, e-commerce sellers, and tradespeople in Boise, Idaho. Get peace of mind and business clarity with your daily financial partner.">
+    <meta name="keywords" content="outsourced accounting, bookkeeping Boise, tax prep Idaho, small business accounting, hair stylist accountant, tattoo artist bookkeeping, daycare accounting, e-commerce bookkeeping, trades accounting, financial advisory Boise, QuickBooks Online Boise">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: "Professional Vibrancy" - Building on warm neutrals (bg-slate-50, bg-slate-100) with a more prominent professional blue (bg-sky-700, text-sky-800, text-sky-900) for primary actions and highlights, and deeper grays (text-slate-800, text-slate-900) for headings to create a bolder yet still integrated and clean feel. -->
+    <!-- Application Structure Plan: This is a single-page landing page designed for lead generation. It follows a standard, intuitive flow: 1) Hero section with a strong value proposition and primary CTA. 2) "Why Choose Us" section highlighting OAM's unique selling points. 3) Services offered. 4) Specific target audience focus. 5) A contact form for lead capture. This linear structure guides potential clients through OAM's offering to the desired action. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Core Value Proposition, Target Audience. Goal: Inform & Convert. Viz/Presentation: Hero section with headline, sub-headline, and prominent CTA. Interaction: Clickable button. Justification: Immediately communicates value and encourages action. Library/Method: Tailwind CSS, HTML.
+        - Report Info: Competitive Advantages. Goal: Inform. Viz/Presentation: Icon-based feature list. Interaction: Static visual. Justification: Quickly digestible points about OAM's strengths. Library/Method: Tailwind CSS with Unicode characters.
+        - Report Info: Services. Goal: Inform. Viz/Presentation: List with brief descriptions. Interaction: Static visual. Justification: Clearly outlines offerings. Library/Method: Tailwind CSS, HTML.
+        - Report Info: Target Market. Goal: Inform & Relate. Viz/Presentation: Textual description with specific professions. Interaction: Static visual. Justification: Helps visitors identify if OAM serves their needs. Library/Method: Tailwind CSS, HTML.
+        - Report Info: Contact. Goal: Convert. Viz/Presentation: Contact form. Interaction: Form submission (placeholder). Justification: Primary lead capture mechanism. Library/Method: Tailwind CSS, HTML, basic JS for form.
+        - Report Info: Visual Appeal. Goal: Attract attention. Viz/Presentation: Placeholder images with relevant text. Interaction: Static visual. Justification: Provides visual breaks and context, easily replaceable by user. Library/Method: placehold.co.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* slate-700 */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .btn-primary {
+            background-color: #0369a1; /* sky-700 - bolder primary */
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px; /* full rounded */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #075985; /* sky-800 - bolder hover */
+            transform: translateY(-2px);
+        }
+        .section-heading {
+            font-size: 2.25rem; /* 3xl */
+            font-weight: 700; /* bold */
+            color: #1a202c; /* slate-900 - bolder heading */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .section-subheading {
+            font-size: 1.125rem; /* lg */
+            color: #475569; /* slate-600 */
+            margin-bottom: 2.5rem;
+            text-align: center;
+            max-width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .feature-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #94a3b8; /* slate-400 - bolder border */
+            border-radius: 0.5rem; /* rounded-lg */
+            background-color: white;
+            font-size: 1rem;
+            color: #334155; /* slate-700 */
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #0369a1; /* sky-700 */
+            box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.2); /* sky-700 with opacity */
+        }
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.show .modal-content {
+            transform: translateY(0);
+        }
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #475569; /* slate-600 */
+        }
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #0369a1; /* sky-700 */
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: none; /* Hidden by default */
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .spinner.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation (Simple) -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold text-sky-800">OAM</div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#services" class="text-slate-700 hover:text-sky-800 font-medium transition-colors duration-200">Services</a></li>
+                    <li><a href="#target-audience" class="text-slate-700 hover:text-sky-800 font-medium transition-colors duration-200">Clients</a></li>
+                    <li><a href="#contact" class="text-slate-700 hover:text-sky-800 font-medium transition-colors duration-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-br from-sky-100 to-sky-200 py-20 md:py-32 text-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="http://googleusercontent.com/file_content/2" alt="Professional accountant working at desk" class="w-full h-full object-cover opacity-70">
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 leading-tight mb-4">
+                    Peace of Mind for Boise's Service Professionals
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-800 mb-8 max-w-3xl mx-auto">
+                    Affordable, tech-enabled bookkeeping, tax prep, and advisory services tailored for your unique business needs.
+                </p>
+                <a href="#contact" class="btn-primary inline-block">
+                    Get Your Free Consultation
+                </a>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="section-heading">Why Choose Outsourced Accounting Manager?</h2>
+                <p class="section-subheading">
+                    We're not just accountants; we're your dedicated financial partner, deeply rooted in the Boise community and committed to your success.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="feature-card">
+                        <div class="text-5xl mb-4">📍</div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Local Expertise</h3>
+                        <p class="text-slate-700">Deep understanding of Boise's unique business landscape and local regulations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="text-5xl mb-4">💰</div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Affordable & Transparent</h3>
+                        <p class="text-slate-700">Low-overhead model means competitive pricing without compromising quality.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="text-5xl mb-4">💻</div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Tech-Enabled Efficiency</h3>
+                        <p class="text-slate-700">Seamless QuickBooks Online integration and secure client portal for modern workflows.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="text-5xl mb-4">🤝</div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Trusted Partnership</h3>
+                        <p class="text-slate-700">Proactive communication and detail-oriented support to build long-term relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 bg-slate-100">
+            <div class="container mx-auto px-4">
+                <h2 class="section-heading">Our Tailored Financial Services</h2>
+                <p class="section-subheading">
+                    From daily bookkeeping to strategic advisory, we offer comprehensive support designed to simplify your finances and empower your business.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
+                        <img src="https://placehold.co/150x100/c7d2fe/4f46e5?text=Bookkeeping" alt="Bookkeeping icon" class="mb-4 rounded-lg">
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Bookkeeping</h3>
+                        <p class="text-slate-700 text-sm">Accurate and timely recording of all financial transactions to keep your books clean and compliant.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
+                        <img src="https://placehold.co/150x100/c7d2fe/4f46e5?text=Tax+Prep" alt="Tax preparation icon" class="mb-4 rounded-lg">
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Tax Preparation</h3>
+                        <p class="text-slate-700 text-sm">Expert preparation of federal, state, and local tax filings to ensure compliance and maximize deductions.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
+                        <img src="https://placehold.co/150x100/c7d2fe/4f46e5?text=Reporting" alt="Financial reporting icon" class="mb-4 rounded-lg">
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Financial Reporting</h3>
+                        <p class="text-slate-700 text-sm">Clear, insightful reports (P&L, Cash Flow) to give you a real-time view of your business's financial health.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
+                        <img src="https://placehold.co/150x100/c7d2fe/4f46e5?text=Advisory" alt="Advisory services icon" class="mb-4 rounded-lg">
+                        <h3 class="font-bold text-xl text-slate-800 mb-2">Advisory Services</h3>
+                        <p class="text-slate-700 text-sm">Strategic guidance on financial decisions, cash flow optimization, and business growth planning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Audience Section -->
+        <section id="target-audience" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="section-heading">Who We Serve</h2>
+                <p class="section-subheading">
+                    We specialize in empowering Boise's dedicated service professionals who need reliable financial guidance without the traditional firm costs.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="p-6">
+                        <img src="https://placehold.co/600x400/f0f9ff/0284c7?text=Diverse+Service+Professionals" alt="Diverse service professionals working" class="rounded-2xl shadow-lg w-full h-auto">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-2xl text-slate-800 mb-4">We Understand Your Unique Business</h3>
+                        <p class="text-slate-700 mb-4">
+                            Whether you're an artist, a caregiver, a tradesperson, or an online entrepreneur, your business has specific financial nuances. We're here to help you navigate:
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-700">
+                            <li>✂️ Hair Stylists & Aestheticians: Managing diverse services & tax deductions.</li>
+                            <li>✒️ Tattoo Artists: Balancing creativity with studio financial complexities.</li>
+                            <li>🧸 Daycare Providers: Navigating tight budgets & regulatory compliance.</li>
+                            <li>📦 E-commerce Sellers: Tracking complex income, costs, and multi-state sales tax.</li>
+                            <li>🛠️ Tradespeople (Electricians, HVAC): Optimizing job costing & managing labor costs.</li>
+                            <li>👤 Solo Operators & LLCs: Getting personalized support often overlooked by larger firms.</li>
+                        </ul>
+                        <p class="text-slate-700 mt-4">
+                            Focus on your craft; we'll handle the numbers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personalized Benefit Explainer Section -->
+        <section id="personalized-benefits" class="py-16 bg-slate-100">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="section-heading">Discover Your Personalized Benefits</h2>
+                <p class="section-subheading">
+                    Curious how OAM can specifically help *your* business? Tell us a bit about your profession and a current financial challenge, and our AI will suggest how we can bring you peace of mind.
+                </p>
+                <button id="openBenefitExplainerModal" class="btn-primary inline-block">
+                    Get Your Personalized Benefits ✨
+                </button>
+            </div>
+        </section>
+
+        <!-- Accounting Term Explainer Section -->
+        <section id="term-explainer" class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="section-heading">Quick Accounting Term Explainer</h2>
+                <p class="section-subheading">
+                    Confused by financial jargon? Enter any accounting or business term, and our AI will provide a clear, concise explanation.
+                </p>
+                <div class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                    <input type="text" id="accountingTermInput" class="form-input flex-grow" placeholder="e.g., 'Accrual Basis', 'Balance Sheet', 'ROI'">
+                    <button id="explainTermBtn" class="btn-primary flex-shrink-0">
+                        Explain Term ✨
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action / Contact Section -->
+        <section id="contact" class="py-16 bg-sky-700 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="section-heading text-white">Ready for Financial Peace of Mind?</h2>
+                <p class="section-subheading text-sky-100 mb-10">
+                    Let's discuss how Outsourced Accounting Manager can simplify your finances and empower your business growth. Schedule your free consultation today.
+                </p>
+                <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg text-left">
+                    <form id="contactForm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-slate-700 text-sm font-bold mb-2">Name:</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-slate-700 text-sm font-bold mb-2">Email:</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-slate-700 text-sm font-bold mb-2">Message:</label>
+                            <textarea id="message" name="message" rows="5" class="form-input" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Send Message</button>
+                    </form>
+                    <p id="formMessage" class="mt-4 text-center text-sm text-slate-700"></p>
+                </div>
+                <div class="mt-10 text-sky-100">
+                    <p class="text-lg font-semibold">Prefer to call?</p>
+                    <p class="text-2xl font-bold mt-2">📞 (208) 555-1234</p>
+                    <p class="text-lg font-semibold mt-4">Or email us directly:</p>
+                    <p class="text-xl font-bold mt-2">📧 contact@oam.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-300 py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Outsourced Accounting Manager. All rights reserved.</p>
+            <p class="text-sm mt-2">Serving Boise, Meridian, Nampa, Caldwell, and surrounding Idaho areas.</p>
+        </div>
+    </footer>
+
+    <!-- Universal LLM Output Modal -->
+    <div id="llmOutputModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-button" id="closeLlmOutputModal">&times;</button>
+            <h3 id="llmOutputTitle" class="text-2xl font-bold text-slate-800 mb-4"></h3>
+            <div id="llmOutputBody" class="text-slate-700 whitespace-pre-wrap"></div>
+            <div id="llmSpinner" class="spinner mt-4"></div>
+        </div>
+    </div>
+
+    <!-- Personalized Benefit Explainer Input Modal -->
+    <div id="benefitExplainerInputModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-button" id="closeBenefitExplainerModal">&times;</button>
+            <h3 class="text-2xl font-bold text-slate-800 mb-4">Get Your Personalized Benefits</h3>
+            <p class="text-slate-600 mb-4">Tell us about your business to see how OAM can specifically help you.</p>
+            <div class="mb-4">
+                <label for="userProfession" class="block text-slate-700 text-sm font-bold mb-2">Your Profession:</label>
+                <input type="text" id="userProfession" class="form-input" placeholder="e.g., Hair Stylist, Electrician, E-commerce Seller">
+            </div>
+            <div class="mb-6">
+                <label for="financialChallenge" class="block text-slate-700 text-sm font-bold mb-2">One Financial Challenge You Face:</label>
+                <textarea id="financialChallenge" rows="3" class="form-input" placeholder="e.g., 'Too much time on bookkeeping', 'Confused about taxes', 'Difficulty tracking cash flow'"></textarea>
+            </div>
+            <button id="submitBenefitExplainerBtn" class="btn-primary w-full">
+                Show My Benefits
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Modal Elements ---
+            const llmOutputModal = document.getElementById('llmOutputModal');
+            const llmOutputTitle = document.getElementById('llmOutputTitle');
+            const llmOutputBody = document.getElementById('llmOutputBody');
+            const closeLlmOutputModalBtn = document.getElementById('closeLlmOutputModal');
+            const llmSpinner = document.getElementById('llmSpinner');
+
+            // --- Benefit Explainer Elements ---
+            const openBenefitExplainerModalBtn = document.getElementById('openBenefitExplainerModal');
+            const benefitExplainerInputModal = document.getElementById('benefitExplainerInputModal');
+            const closeBenefitExplainerModalBtn = document.getElementById('closeBenefitExplainerModal');
+            const userProfessionInput = document.getElementById('userProfession');
+            const financialChallengeInput = document.getElementById('financialChallenge');
+            const submitBenefitExplainerBtn = document.getElementById('submitBenefitExplainerBtn');
+
+            // --- Accounting Term Explainer Elements ---
+            const accountingTermInput = document.getElementById('accountingTermInput');
+            const explainTermBtn = document.getElementById('explainTermBtn');
+
+
+            // --- Universal Modal Functions ---
+            function showLlmOutputModal(title, content) {
+                llmOutputTitle.textContent = title;
+                llmOutputBody.textContent = content;
+                llmOutputModal.classList.add('show');
+            }
+
+            function hideLlmOutputModal() {
+                llmOutputModal.classList.remove('show');
+                llmOutputTitle.textContent = '';
+                llmOutputBody.textContent = '';
+            }
+
+            closeLlmOutputModalBtn.addEventListener('click', hideLlmOutputModal);
+            llmOutputModal.addEventListener('click', (e) => {
+                if (e.target === llmOutputModal) {
+                    hideLlmOutputModal();
+                }
+            });
+
+            // --- Spinner Functions ---
+            function showLlmSpinner() {
+                llmSpinner.classList.add('show');
+                llmOutputBody.textContent = ''; // Clear previous content
+                llmOutputTitle.textContent = 'Generating...';
+                llmOutputModal.classList.add('show'); // Ensure modal is visible
+            }
+
+            function hideLlmSpinner() {
+                llmSpinner.classList.remove('show');
+            }
+
+            // --- Gemini API Call Function ---
+            async function callGeminiAPI(prompt) {
+                showLlmSpinner();
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will provide this at runtime
+
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        console.error('Gemini API response structure unexpected:', result);
+                        return 'Failed to generate content. Please try again.';
+                    }
+                } catch (error) {
+                    console.error('Error calling Gemini API:', error);
+                    return 'An error occurred while connecting to the AI. Please check your network and try again.';
+                } finally {
+                    hideLlmSpinner();
+                }
+            }
+
+            // --- Personalized Benefit Explainer Logic ---
+            openBenefitExplainerModalBtn.addEventListener('click', () => {
+                benefitExplainerInputModal.classList.add('show');
+            });
+
+            closeBenefitExplainerModalBtn.addEventListener('click', () => {
+                benefitExplainerInputModal.classList.remove('show');
+                userProfessionInput.value = '';
+                financialChallengeInput.value = '';
+            });
+
+            benefitExplainerInputModal.addEventListener('click', (e) => {
+                if (e.target === benefitExplainerInputModal) {
+                    closeBenefitExplainerModalBtn.click(); // Use the existing close button logic
+                }
+            });
+
+            submitBenefitExplainerBtn.addEventListener('click', async () => {
+                const profession = userProfessionInput.value.trim();
+                const challenge = financialChallengeInput.value.trim();
+
+                if (!profession || !challenge) {
+                    showLlmOutputModal("Input Required", "Please enter both your profession and a financial challenge.");
+                    return;
+                }
+
+                benefitExplainerInputModal.classList.remove('show'); // Hide input modal
+
+                const prompt = `As Outsourced Accounting Manager (OAM), a financial services firm in Boise, explain in 2-3 concise sentences how you can specifically benefit a "${profession}" who is currently facing the financial challenge of "${challenge}". Focus on peace of mind, compliance, and business clarity.`;
+                const generatedBenefit = await callGeminiAPI(prompt);
+                showLlmOutputModal(`Benefits for a ${profession}`, generatedBenefit);
+            });
+
+            // --- Accounting Term Explainer Logic ---
+            explainTermBtn.addEventListener('click', async () => {
+                const term = accountingTermInput.value.trim();
+                if (!term) {
+                    showLlmOutputModal("Input Required", "Please enter an accounting term to explain.");
+                    return;
+                }
+
+                const prompt = `Explain the accounting term "${term}" concisely in 1-2 sentences, suitable for a small business owner who isn't a financial expert.`;
+                const explanation = await callGeminiAPI(prompt);
+                showLlmOutputModal(`Explanation of: ${term}`, explanation);
+                accountingTermInput.value = ''; // Clear input after generating
+            });
+
+
+            // --- Contact Form Submission (Placeholder) ---
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                const formMessage = document.getElementById('formMessage');
+                formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                formMessage.style.color = '#0284c7'; // sky-600
+                
+                setTimeout(() => {
+                    this.reset();
+                    formMessage.textContent = '';
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
