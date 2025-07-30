@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outsourced Accounting Manager Boise | Bookkeeping, Tax & Advisory for Small Businesses</title>
+    <title>Outsourced Accounting Solutions Boise | Bookkeeping, Tax & Advisory for Small Businesses</title>
     <meta name="description" content="Affordable, tech-enabled bookkeeping, tax prep, and advisory services for hair stylists, tattoo artists, daycare providers, e-commerce sellers, and tradespeople in Boise, Idaho. Get peace of mind and business clarity with your daily financial partner.">
     <meta name="keywords" content="outsourced accounting, bookkeeping Boise, tax prep Idaho, small business accounting, hair stylist accountant, tattoo artist bookkeeping, daycare accounting, e-commerce bookkeeping, trades accounting, financial advisory Boise, QuickBooks Online Boise">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -156,7 +156,7 @@
     <!-- Header & Navigation (Simple) -->
     <header class="bg-white shadow-sm py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <div class="text-2xl font-bold text-sky-800">OAM</div>
+            <div class="text-2xl font-bold text-sky-800">Outsourced Accounting Solutions</div>
             <nav>
                 <ul class="flex space-x-6">
                     <li><a href="#services" class="text-slate-700 hover:text-sky-800 font-medium transition-colors duration-200">Services</a></li>
@@ -189,7 +189,7 @@
         <!-- Why Choose Us Section -->
         <section id="why-choose-us" class="py-16 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="section-heading">Why Choose Outsourced Accounting Manager?</h2>
+                <h2 class="section-heading">Why Choose Outsourced Accounting Solutions?</h2>
                 <p class="section-subheading">
                     We're not just accountants; we're your dedicated financial partner, deeply rooted in the Boise community and committed to your success.
                 </p>
@@ -287,7 +287,7 @@
             <div class="container mx-auto px-4 text-center">
                 <h2 class="section-heading">Discover Your Personalized Benefits</h2>
                 <p class="section-subheading">
-                    Curious how OAM can specifically help *your* business? Tell us a bit about your profession and a current financial challenge, and our AI will suggest how we can bring you peace of mind.
+                    Curious how Outsourced Accounting Solutions can specifically help *your* business? Tell us a bit about your profession and a current financial challenge, and our AI will suggest how we can bring you peace of mind.
                 </p>
                 <button id="openBenefitExplainerModal" class="btn-primary inline-block">
                     Get Your Personalized Benefits ✨
@@ -316,7 +316,7 @@
             <div class="container mx-auto px-4 text-center">
                 <h2 class="section-heading text-white">Ready for Financial Peace of Mind?</h2>
                 <p class="section-subheading text-sky-100 mb-10">
-                    Let's discuss how Outsourced Accounting Manager can simplify your finances and empower your business growth. Schedule your free consultation today.
+                    Let's discuss how Outsourced Accounting Solutions can simplify your finances and empower your business growth. Schedule your free consultation today.
                 </p>
                 <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg text-left">
                     <form id="contactForm">
@@ -338,9 +338,9 @@
                 </div>
                 <div class="mt-10 text-sky-100">
                     <p class="text-lg font-semibold">Prefer to call?</p>
-                    <p class="text-2xl font-bold mt-2">📞 (208) 555-1234</p>
+                    <p class="text-2xl font-bold mt-2">📞 <a href="tel:+12083530214" class="text-white hover:underline">208.353.0214</a></p>
                     <p class="text-lg font-semibold mt-4">Or email us directly:</p>
-                    <p class="text-xl font-bold mt-2">📧 contact@oam.com</p>
+                    <p class="text-xl font-bold mt-2">📧 contact@oas.com</p>
                 </div>
             </div>
         </section>
@@ -348,7 +348,7 @@
 
     <footer class="bg-slate-900 text-slate-300 py-8 text-center">
         <div class="container mx-auto px-4">
-            <p>&copy; 2025 Outsourced Accounting Manager. All rights reserved.</p>
+            <p>&copy; 2025 Outsourced Accounting Solutions. All rights reserved.</p>
             <p class="text-sm mt-2">Serving Boise, Meridian, Nampa, Caldwell, and surrounding Idaho areas.</p>
         </div>
     </footer>
@@ -368,7 +368,7 @@
         <div class="modal-content">
             <button class="close-button" id="closeBenefitExplainerModal">&times;</button>
             <h3 class="text-2xl font-bold text-slate-800 mb-4">Get Your Personalized Benefits</h3>
-            <p class="text-slate-600 mb-4">Tell us about your business to see how OAM can specifically help you.</p>
+            <p class="text-slate-600 mb-4">Tell us about your business to see how Outsourced Accounting Solutions can specifically help you.</p>
             <div class="mb-4">
                 <label for="userProfession" class="block text-slate-700 text-sm font-bold mb-2">Your Profession:</label>
                 <input type="text" id="userProfession" class="form-input" placeholder="e.g., Hair Stylist, Electrician, E-commerce Seller">
@@ -499,7 +499,7 @@
 
                 benefitExplainerInputModal.classList.remove('show'); // Hide input modal
 
-                const prompt = `As Outsourced Accounting Manager (OAM), a financial services firm in Boise, explain in 2-3 concise sentences how you can specifically benefit a "${profession}" who is currently facing the financial challenge of "${challenge}". Focus on peace of mind, compliance, and business clarity.`;
+                const prompt = `As Outsourced Accounting Solutions, a financial services firm in Boise, explain in 2-3 concise sentences how you can specifically benefit a "${profession}" who is currently facing the financial challenge of "${challenge}". Focus on peace of mind, compliance, and business clarity.`;
                 const generatedBenefit = await callGeminiAPI(prompt);
                 showLlmOutputModal(`Benefits for a ${profession}`, generatedBenefit);
             });
